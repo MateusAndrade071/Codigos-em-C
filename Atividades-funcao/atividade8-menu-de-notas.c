@@ -24,14 +24,16 @@ int main(){
 	do{	
 		switch(opcao){
 			case 1:
-				// Mostrar nome da disciplina e a média
+				// Mostrar nome da disciplina e a mÃ©dia
 				for(i = 0; i < 3; i++){
 					printf("Me diga a %d disciplina: \n",i+1);
 					scanf("%s",&disciplina[i]);
 					soma = 0;
 						for(j = 0; j < 2; j++){
-							printf("Me diga a %d nota: \n",j+1);
-							scanf("%f",&notas[i][j]);
+							do{
+								printf("Me diga a %d nota: \n",j+1);
+								scanf("%f",&notas[i][j]);
+							}while(notas[i][j] < 0 || notas[i][j] > 10);
 						
 							soma += notas[i][j];
 						}
@@ -44,9 +46,9 @@ int main(){
 				for(i = 0;i < 3; i++){
 					printf("Materia (%s)\n",disciplina[i]);
 						
-					if(media >= 7){
+					if(media[i] >= 7){
         				printf("APROVADO com a media %f\n",media[i]);
-    				}else if(media >= 5){
+    				}else if(media[i] >= 5){
         				printf("RECUPERACAO com a media %f\n",media[i]);
     				}else{
         				printf("REPROVADO com a media %f\n",media[i]);
@@ -62,9 +64,9 @@ int main(){
 						}
 					printf("Media: %f\n",media[i]);
 				
-					if(media >= 7){
+					if(media[i] >= 7){
         				printf("APROVADO com a media %f\n",media[i]);
-    				}else if(media >= 5){
+    				}else if(media[i] >= 5){
         				printf("RECUPERACAO com a media %f\n",media[i]);
     				}else{
         				printf("REPROVADO com a media %f\n",media[i]);
@@ -78,9 +80,10 @@ int main(){
 				exit(0);
 			break;			
 		}
+			sleep(3);
 			printf("\n");
        		menu();
-
+			
         	printf("Escolha uma dessas opcoes: \n");
        	 	scanf("%d", &opcao);
 
