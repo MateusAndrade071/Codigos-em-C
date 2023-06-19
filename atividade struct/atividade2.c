@@ -48,11 +48,17 @@ int main(){
 			for(j = 0; j < 3; j++){
 				printf("Nota %d: %.2f\n",j+1,aluno[i].notas[i][j]);
 			}
-		printf("Media: %.2f\n",media[i]);
+		if(media[i] >= 7){
+			printf("Aprovado com media: %.2f",media[i]);
+		}else if(media[i] >= 5){
+			printf("Recuperacao com media: %.2f",media[i]);
+		}else{
+			printf("Reprovado com media: %.2f",media[i]);
+		}
 		printf("\n");
 	}
 	printf("Maior Nota das primeiras Provas: %.2f\n",maiorNota);
-	printf("Maior média: %.2f\n",maiorMedia);
-	printf("Maior média: %.2f\n",menorMedia);
+	printf("Maior mÃ©dia: %.2f\n",maiorMedia);
+	printf("Maior mÃ©dia: %.2f\n",menorMedia);
 	
 }
